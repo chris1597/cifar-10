@@ -1,7 +1,6 @@
 from pydantic import BaseModel
 import torch
 from sklearn.metrics import accuracy_score, precision_score, recall_score
-import logging
 
 class PyTorchHelper(BaseModel):
     model: torch.nn.Module
@@ -52,7 +51,7 @@ class PyTorchHelper(BaseModel):
             val_loss /= len(val_loader.dataset)
             val_losses.append(val_loss)
 
-            logging.info(f'Epoch {epoch + 1}/{epochs} - Validation Loss: {val_loss:.4f}')
+            print(f'Epoch {epoch + 1}/{epochs} - Validation Loss: {val_loss:.4f}')
 
         return val_losses
 
