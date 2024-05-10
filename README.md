@@ -1,14 +1,48 @@
 
 ## CIFAR-10 Resnet Transfer Learning
 
-- **Project Description:** This Repository uses Resnet 
-- **Project Image:** Replace `` with the path to an image file within your repository that illustrates what the project does or how it looks. This could be a screenshot or a diagram.
+
+This repository demonstrates the application of Transfer Learning using a pretrained ResNet model to classify images from the CIFAR-10 dataset, which includes 10 classes and image dimensions of 32x32 pixels.
+
 ![Screenshot of Project](https://production-media.paperswithcode.com/datasets/4fdf2b82-2bc3-4f97-ba51-400322b228b1.png)
-- **Installation:** Instructions on how to clone the repository and install the required dependencies.
-- **Usage:** A brief code example showing how to use your project or library.
-- **Results:** This optional section can be used to display additional screenshots, code snippets, or explanations of more complex use cases.
-![Project Architecture](conf_matrix.png)
+
+## Installation
+
+To get started, clone the repository and set up the environment:
+
+```bash
+git clone <repository-url>
+conda env create -f requirement.yml
+```
+
+## Usage
+Edit the training config in main.py
+
+```python
+config = {
+    "epochs": 10,
+    "batch_size": 32,
+    "learning_rate": 0.001
+}
+```
+
+run
+```bash
+python3 main.py
+```
+
+### Results
+
+Chart of the Loss over the training epochs
 ![Project Architecture](train_process.png)
 
+Confusion Matrix of the 10 different classes
+{'frog': 0, 'truck': 1, 'deer': 2, 'automobile': 3, 'bird': 4, 'horse': 5, 'ship': 6, 'cat': 7, 'dog': 8, 'airplane': 9}
+![Project Architecture](conf_matrix.png)
 
-This README is designed to be both informative and visually engaging, ensuring that anyone visiting your GitHub repository can quickly understand and start using your project.
+| Metric    | Value     |
+|-----------|-----------|
+| Accuracy  | 0.8184    |
+| Precision | 0.8256    |
+| Recall    | 0.8172    |
+

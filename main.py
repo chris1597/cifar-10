@@ -12,7 +12,11 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from plot_helper import PlotHelper
 
-print("start")
+config = {
+    "epochs": 10,
+    "batch_size": 64,
+    "learning_rate": 0.001
+}
 
 transform_pipeline = transforms.Compose([
     transforms.ToPILImage(),
@@ -29,20 +33,16 @@ dataset_helper = DatasetHelper(
 
 dataset = dataset_helper.create_dataset()
 
-print("dataset created")
 
 train_size = 40000
 test_size = len(dataset) - train_size
-print(test_size)
 train_dataset, test_dataset = random_split(dataset, [train_size, test_size])
-train_loader = DataLoader(dataset, batch_size=64, shuffle=True)
-test_loader = DataLoader(test_dataset, batch_size=64, shuffle=False)
+train_loader = DataLoader(dataset, batch_size=config["batch_size"], shuffle=True)
+test_loader = DataLoader(test_dataset, batch_size=config["batch_size"], shuffle=False)
 
-print("split dataset")
 
 
 device = torch.device("mps")
-print(f"Using device: {device}")
 num_classes = len(dataset.label_to_int)
 model = models.resnet18(pretrained=True)
 model.fc = torch.nn.Linear(model.fc.in_features, num_classes)
@@ -53,17 +53,11 @@ for param in model.fc.parameters():
     param.requires_grad = True
 
 
-optimizer = optim.Adam(model.fc.parameters(), lr=0.001)
+optimizer = optim.Adam(model.fc.parameters(), lr=config["learning_rate"])
 criterion = torch.nn.CrossEntropyLoss()
 criterion = criterion.to(device) 
-
-print("model created")
-
-# Create an instance of PyTorchHelper
 pytorch_helper = PyTorchHelper(model=model, device=device)
-# Train and evaluate the model
-losses = pytorch_helper.train_model(train_loader, optimizer, criterion, epochs=10)  # Train the model
-
+losses = pytorch_helper.train_model(train_loader, optimizer, criterion, epochs=config["epochs"])  # Train the model
 plot_helper = PlotHelper()
 plot_helper.plot_losses(losses)
 
