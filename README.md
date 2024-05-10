@@ -34,6 +34,12 @@ python3 main.py
 
 ### Results
 
+| Metric    | Value     |
+|-----------|-----------|
+| Accuracy  | 0.8184    |
+| Precision | 0.8256    |
+| Recall    | 0.8172    |
+
 Chart of the loss over the training epochs
 
 ![Project Architecture](train_process.png)
@@ -44,9 +50,5 @@ Confusion Matrix of the 10 different classes
 
 ![Project Architecture](conf_matrix.png)
 
-| Metric    | Value     |
-|-----------|-----------|
-| Accuracy  | 0.8184    |
-| Precision | 0.8256    |
-| Recall    | 0.8172    |
+
 
