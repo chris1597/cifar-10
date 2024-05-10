@@ -1,15 +1,9 @@
-import pandas as pd
-from skimage import io
-from torch.utils.data import Dataset, DataLoader, random_split
+from torch.utils.data import DataLoader, random_split
 from torchvision import transforms, models
 import torch
 import torch.optim as optim
 from pytorch_helper import PyTorchHelper
-import matplotlib.pyplot as plt
 from dataset_helper import DatasetHelper
-from sklearn.metrics import confusion_matrix
-import matplotlib.pyplot as plt
-import seaborn as sns
 from plot_helper import PlotHelper
 
 # define training config
