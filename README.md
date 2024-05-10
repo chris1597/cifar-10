@@ -43,13 +43,13 @@ python3 main.py
 
 Chart of the loss over the training epochs
 
-![Project Architecture](train_process1.png)
+![Project Architecture](assets/train_process1.png)
 
 Confusion Matrix of the 10 different classes
 
 {'frog': 0, 'truck': 1, 'deer': 2, 'automobile': 3, 'bird': 4, 'horse': 5, 'ship': 6, 'cat': 7, 'dog': 8, 'airplane': 9}
 
-![Project Architecture](conf_matrix1.png)
+![Project Architecture](assets/conf_matrix1.png)
 
 
 
