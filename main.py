@@ -31,7 +31,7 @@ dataset = dataset_helper.create_dataset()
 
 print("dataset created")
 
-train_size = 50000
+train_size = 40000
 test_size = len(dataset) - train_size
 print(test_size)
 train_dataset, test_dataset = random_split(dataset, [train_size, test_size])
