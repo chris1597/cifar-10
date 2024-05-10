@@ -4,6 +4,7 @@
 
 This repository demonstrates the application of Transfer Learning using a pretrained ResNet model to classify images from the CIFAR-10 dataset, which includes 10 classes and image dimensions of 32x32 pixels.
 
+
 ![Screenshot of Project](https://production-media.paperswithcode.com/datasets/4fdf2b82-2bc3-4f97-ba51-400322b228b1.png)
 
 ## Installation
@@ -33,11 +34,14 @@ python3 main.py
 
 ### Results
 
-Chart of the Loss over the training epochs
+Chart of the loss over the training epochs
+
 ![Project Architecture](train_process.png)
 
 Confusion Matrix of the 10 different classes
+
 {'frog': 0, 'truck': 1, 'deer': 2, 'automobile': 3, 'bird': 4, 'horse': 5, 'ship': 6, 'cat': 7, 'dog': 8, 'airplane': 9}
+
 ![Project Architecture](conf_matrix.png)
 
 | Metric    | Value     |
