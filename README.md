@@ -14,7 +14,7 @@ To get started, clone the repository and set up the environment:
 
 ```bash
 git clone <repository-url>
-conda env create -f requirement.yml
+conda env create -f environment.yml
 ```
 
 ## Usage
