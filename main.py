@@ -31,8 +31,9 @@ dataset = dataset_helper.create_dataset()
 
 print("dataset created")
 
-train_size = 40000
+train_size = 50000
 test_size = len(dataset) - train_size
+print(test_size)
 train_dataset, test_dataset = random_split(dataset, [train_size, test_size])
 train_loader = DataLoader(dataset, batch_size=64, shuffle=True)
 test_loader = DataLoader(test_dataset, batch_size=64, shuffle=False)
