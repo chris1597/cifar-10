@@ -2,12 +2,13 @@
 ## CIFAR-10 Resnet Transfer Learning
 
 
-This repository demonstrates the application of Transfer Learning using a pretrained ResNet model to classify images from the CIFAR-10 dataset, which includes 10 classes and image dimensions of 32x32 pixels.
-
+This repository demonstrates the application of Transfer Learning using a pretrained ResNet model to classify 50.000 images from the CIFAR-10 dataset, which includes 10 classes and image dimensions of 32x32 pixels.
 
 ![Screenshot of Project](https://production-media.paperswithcode.com/datasets/4fdf2b82-2bc3-4f97-ba51-400322b228b1.png)
 
 ## Installation
+
+[Download dataset](https://drive.google.com/file/d/1e8IbPE--6VVRl-nAi6DkA3H14GoGTYNm/view?usp=sharing)
 
 To get started, clone the repository and set up the environment:
 

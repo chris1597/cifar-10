@@ -1,6 +1,5 @@
 from pydantic import BaseModel, DirectoryPath, FilePath
 from typing import Optional, Callable
-from torchvision import transforms
 import pandas as pd
 import os
 from skimage import io
@@ -16,7 +15,6 @@ class DatasetHelper(BaseModel):
 
     def create_dataset(self) -> Dataset:
         """Method to create and return the custom image dataset."""
-
         class CustomImageDataset(Dataset):
             def __init__(self, csv_file, img_dir, transform=None):
                 self.img_labels = pd.read_csv(csv_file)
@@ -32,8 +30,10 @@ class DatasetHelper(BaseModel):
             def __getitem__(self, idx):
                 img_path = os.path.join(self.img_dir, str(self.img_labels.iloc[idx, 0]) + '.png')
                 image = io.imread(img_path)
-                label_str = self.img_labels.iloc[idx, 1]  # Get the string label
-                label = self.label_to_int[label_str]  # Convert to integer
+                 # Get the string label
+                label_str = self.img_labels.iloc[idx, 1] 
+                # Convert to integer
+                label = self.label_to_int[label_str]
                 if self.transform:
                     image = self.transform(image)
                 return image, label
